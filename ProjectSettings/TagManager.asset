@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 3
+  serializedVersion: 2
   tags: []
   layers:
   - Default
@@ -38,47 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2370257921
-    locked: 0
-  - name: Terrain Overlay
-    uniqueID: 1741465799
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Props Low
-    uniqueID: 4018849119
-    locked: 0
-  - name: Props High
-    uniqueID: 2941058325
-    locked: 0
-  - name: Player
-    uniqueID: 373425469
-    locked: 0
-  - name: Walls Base
-    uniqueID: 2949802199
-    locked: 0
-  - name: Wall Details
-    uniqueID: 2726862629
-    locked: 0
-  - name: Top Decor
-    uniqueID: 1278576663
-    locked: 0
-  - name: Tall Objects
-    uniqueID: 292993639
-    locked: 0
-  - name: Gate
-    uniqueID: 2243639271
-    locked: 0
-  - name: Top
-    uniqueID: 1136726401
-    locked: 0
-  - name: Floor Clutter
-    uniqueID: 2950284699
-    locked: 0
-  - name: WallTop
-    uniqueID: 100823607
-    locked: 0
-  m_RenderingLayers:
-  - Default
