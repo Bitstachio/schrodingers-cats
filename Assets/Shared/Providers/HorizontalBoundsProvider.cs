@@ -1,0 +1,37 @@
+using UnityEngine;
+
+namespace Shared.Providers
+{
+    public class HorizontalBoundsProvider : MonoBehaviour
+    {
+        public static HorizontalBoundsProvider Instance { get; private set; }
+        public float Min { get; private set; }
+        public float Max { get; private set; }
+
+        // Prevent rocks from spawning flush against the screen edges
+        private const float Padding = 1f;
+
+        private void Awake()
+        {
+            Instance = this;
+            UpdateBounds();
+        }
+
+        [ContextMenu("Refresh Bounds")]
+        public void UpdateBounds()
+        {
+            var mainCamera = Camera.main;
+            if (!mainCamera)
+            {
+                Debug.LogError("Main camera is required but not found", this);
+                return;
+            }
+
+            // Do not set z to 0
+            // It must be the distance from the camera to the focal plane to correctly calculate world-space boundaries
+            var z = Mathf.Abs(mainCamera.transform.position.z);
+            Min = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, z)).x + Padding;
+            Max = mainCamera.ViewportToWorldPoint(new Vector3(1, 0, z)).x - Padding;
+        }
+    }
+}
