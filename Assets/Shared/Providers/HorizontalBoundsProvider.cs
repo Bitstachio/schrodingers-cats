@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Shared.Providers
 {
-    public class HorizontalBoundsProvider : MonoBehaviour, IBoundsProvider
+    public sealed class HorizontalBoundsProvider : MonoBehaviour, IBoundsProvider
     {
         public float Min { get; private set; }
         public float Max { get; private set; }

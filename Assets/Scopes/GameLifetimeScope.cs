@@ -7,23 +7,28 @@ using VContainer.Unity;
 
 namespace Scopes
 {
-    public class GameLifetimeScope : LifetimeScope
+    public sealed class GameLifetimeScope : LifetimeScope
     {
-        //===== Injectables =====
-
+        [Header("Providers")]
         [SerializeField] private HorizontalBoundsProvider horizontalBoundsProvider;
-        
-        [SerializeField] private Rock rockPrefab;
 
-        //===== Configuration =====
+        [Header("Settings")]
+        [SerializeField] private Rock rockPrefab;
+        [SerializeField] private float spawnInterval = 3f;
+        [SerializeField] private Transform spawnOrigin;
 
         protected override void Configure(IContainerBuilder builder)
         {
+            // Providers
             builder.RegisterComponent(horizontalBoundsProvider).As<IBoundsProvider>();
 
+            // Factories
             builder.Register<RockFactory>(Lifetime.Singleton).WithParameter(rockPrefab);
 
-            builder.RegisterComponentInHierarchy<RockSpawner>();
+            // Systems
+            builder.RegisterEntryPoint<RockSpawner>()
+                .WithParameter("interval", spawnInterval)
+                .WithParameter("originPosition", spawnOrigin.position);
         }
     }
 }

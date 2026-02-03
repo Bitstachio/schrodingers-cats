@@ -4,7 +4,7 @@ using VContainer.Unity;
 
 namespace Features.Hazards.Scripts
 {
-    public class RockFactory
+    public sealed class RockFactory
     {
         private readonly IObjectResolver _container;
         private readonly Rock _prefab;
@@ -15,9 +15,6 @@ namespace Features.Hazards.Scripts
             _prefab = prefab;
         }
 
-        public Rock Create(Vector3 position)
-        {
-            return _container.Instantiate(_prefab, position, Quaternion.identity);
-        }
+        public Rock Create(Vector3 position) => _container.Instantiate(_prefab, position, Quaternion.identity);
     }
 }

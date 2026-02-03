@@ -931,9 +931,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432044268}
-  - component: {fileID: 1432044269}
   m_Layer: 0
-  m_Name: Rock Spawner
+  m_Name: Rock Spawn Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -954,20 +953,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1432044269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1432044267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdfb0a6b5a524e419bbb1dceda08abfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rock: {fileID: 2156115695398247023, guid: 64ca9af46b9354e5fbd5a8e1c508d4fe, type: 3}
-  interval: 3
 --- !u!1 &2037558909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,6 +988,8 @@ MonoBehaviour:
   autoInjectGameObjects: []
   horizontalBoundsProvider: {fileID: 152018617}
   rockPrefab: {fileID: 2156115695398247023, guid: 64ca9af46b9354e5fbd5a8e1c508d4fe, type: 3}
+  spawnInterval: 3
+  spawnOrigin: {fileID: 1432044268}
 --- !u!4 &2037558911
 Transform:
   m_ObjectHideFlags: 0
@@ -1023,9 +1010,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 619394802}
   - {fileID: 2037558911}
   - {fileID: 194912012}
-  - {fileID: 619394802}
+  - {fileID: 1432044268}
   - {fileID: 438074792}
   - {fileID: 986683027}
-  - {fileID: 1432044268}
