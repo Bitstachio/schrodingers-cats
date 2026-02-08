@@ -4,9 +4,8 @@ namespace Features.Player.Scripts
 {
     public sealed class Shooter : MonoBehaviour
     {
+        [SerializeField] private PlayerStats stats;
         [SerializeField] private GameObject bullet;
-        [SerializeField] private float interval = 3f;
-        [SerializeField] private float speed = 5f;
 
         private float _timer;
 
@@ -15,10 +14,10 @@ namespace Features.Player.Scripts
         private void Update()
         {
             _timer += Time.deltaTime;
-            if (!(_timer >= interval)) return;
+            if (!(_timer >= stats.bulletInterval)) return;
 
             var shot = Instantiate(bullet, transform.position, Quaternion.identity);
-            if (shot.TryGetComponent<Bullet>(out var behaviour)) behaviour.Launch(Vector2.up, speed);
+            if (shot.TryGetComponent<Bullet>(out var behaviour)) behaviour.Launch(Vector2.up, stats.bulletSpeed);
 
             _timer = 0f;
         }

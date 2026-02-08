@@ -5,7 +5,7 @@ namespace Features.Player.Scripts
     [RequireComponent(typeof(Rigidbody2D))]
     public sealed class Movement : MonoBehaviour
     {
-        [SerializeField] private float speed = 5f;
+        [SerializeField] private PlayerStats stats;
 
         private GameControls _controls;
         private Rigidbody2D _rb;
@@ -28,7 +28,7 @@ namespace Features.Player.Scripts
         {
             _rb.linearVelocity = Mathf.Abs(_horizontalInput) < 0.01f
                 ? Vector2.zero
-                : new Vector2(_horizontalInput * speed, 0);
+                : new Vector2(_horizontalInput * stats.movementSpeed, 0);
         }
     }
 }
