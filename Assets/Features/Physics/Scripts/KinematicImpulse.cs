@@ -1,3 +1,4 @@
+using System.Linq;
 using Features.Shared.Tag;
 using UnityEngine;
 
@@ -5,14 +6,14 @@ namespace Features.Physics.Scripts
 {
     public class KinematicImpulse : MonoBehaviour
     {
+        [SerializeField] [Tag] private string[] targets;
         [SerializeField] private float magnitude = 5f;
-        [SerializeField] [Tag] private string[] target;
 
         //===== Lifecycle =====
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.transform.CompareTag("Hazard")) ApplyKineticImpulse(other.rigidbody);
+            if (targets.Contains(other.transform.tag)) ApplyKineticImpulse(other.rigidbody);
         }
 
         //===== Utilities =====

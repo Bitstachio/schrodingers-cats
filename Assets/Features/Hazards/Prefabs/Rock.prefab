@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5874962051031265861}
   - component: {fileID: 8699954296223118928}
   - component: {fileID: 2156115695398247023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rock
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -165,4 +165,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c011f2d2484a445f8f92631682e4e92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetBounceHeight: 5
