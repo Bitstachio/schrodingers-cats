@@ -1,6 +1,6 @@
 using Features.Hazards.Scripts;
-using Shared.Interfaces;
-using Shared.Providers;
+using Features.Shared.Interfaces;
+using Features.Shared.Providers;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -9,9 +9,11 @@ namespace Scopes
 {
     public sealed class GameLifetimeScope : LifetimeScope
     {
-        [Header("Providers")] [SerializeField] private HorizontalBoundsProvider horizontalBoundsProvider;
+        [Header("Providers")]
+        [SerializeField] private HorizontalBoundsProvider horizontalBoundsProvider;
 
-        [Header("Settings")] [SerializeField] private Rock rockPrefab;
+        [Header("Settings")]
+        [SerializeField] private Rock rockPrefab;
         [SerializeField] private float spawnInterval = 3f;
         [SerializeField] private Transform spawnOrigin;
         [SerializeField] private float spawnXSpeedBound = 2f;

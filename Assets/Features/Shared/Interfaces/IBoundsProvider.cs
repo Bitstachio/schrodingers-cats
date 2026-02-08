@@ -1,4 +1,4 @@
-namespace Shared.Interfaces
+namespace Features.Shared.Interfaces
 {
     public interface IBoundsProvider
     {

@@ -1,4 +1,4 @@
-using Shared.Interfaces;
+using Features.Shared.Interfaces;
 using UnityEngine;
 using VContainer.Unity;
 

@@ -1,7 +1,7 @@
-using Shared.Interfaces;
+using Features.Shared.Interfaces;
 using UnityEngine;
 
-namespace Shared.Providers
+namespace Features.Shared.Providers
 {
     public sealed class HorizontalBoundsProvider : MonoBehaviour, IBoundsProvider
     {
